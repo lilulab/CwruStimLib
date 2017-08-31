@@ -31,7 +31,7 @@ int main()
     uint8 buttonPre = 0u;
     
     // CwruStimLib Related
-    int8_t sucessStatus = 0u;
+    int8_t sucessStatus = 1u;
     cwru_stim_struct_t cwru_stim_brd1;
     cwru_stim_struct_t cwru_stim_brd2;
 
@@ -57,7 +57,7 @@ int main()
 
     for(;;)
     {
-        if(sucessStatus < 0u)
+        if(sucessStatus >= 0u)
         {
             /* Indicate an error on the LED */
             LED_Write(LED_ON);
@@ -104,7 +104,7 @@ int main()
             LED_Write(LED_OFF);     
 
             /* Clear error status */
-            sucessStatus = 0u;
+            sucessStatus = 1u;
         }
         buttonPre = button; 
     } // end for(;;)

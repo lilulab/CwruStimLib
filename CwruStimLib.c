@@ -16,7 +16,7 @@
 int8_t cwru_stim_init(cwru_stim_struct_t *cwru_stim, const uint8_t brd_type, 
                     const uint8_t port_id, const uint8_t setting) 
 {
-    int8_t sucessStatus = 0;
+    int8_t sucessStatus = 1;
 
     cwru_stim->brd_type = brd_type;
     cwru_stim->port_id = port_id;
@@ -63,7 +63,7 @@ int8_t cwru_stim_init(cwru_stim_struct_t *cwru_stim, const uint8_t brd_type,
 
 int8_t cwru_stim_start(cwru_stim_struct_t *cwru_stim, const uint8_t sync_signal) 
 {
-    int8_t sucessStatus = 0;
+    int8_t sucessStatus = 1;
 
     if (cwru_stim->setting == ( STIM_SETTING_SINGLE_SCHEDULER | 
                                 STIM_SETTING_DEFAULT)) {
@@ -94,7 +94,7 @@ int8_t cwru_stim_update(cwru_stim_struct_t *cwru_stim,
                         const uint8_t cmd, const uint8_t mode,
                         const uint8_t setting, const float param) 
 {
-    int8_t sucessStatus = 0;
+    int8_t sucessStatus = 1;
 
     switch (cmd) {
         case STIM_UPDATE_GAIT_CYCLE:
