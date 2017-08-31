@@ -55,6 +55,11 @@ int main()
                                 STIM_UART_PORT_1, 
                                 STIM_SETTING_DEFAULT);
 
+    // Call start func to send sync message to brds
+    //sucessStatus *= cwru_stim_start(cwru_stim_struct_t *cwru_stim, const uint8_t sync_signal) 
+    sucessStatus *= cwru_stim_start(&cwru_stim_brd1, UECU_SYNC_MSG);
+    sucessStatus *= cwru_stim_start(&cwru_stim_brd2, UECU_SYNC_MSG);
+
     for(;;)
     {
         if(sucessStatus >= 0u)
